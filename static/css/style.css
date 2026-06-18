@@ -1,0 +1,142 @@
+
+
+@font-face {
+    font-family: 'Bruno Ace SC';
+    src: url('\\static\\fonts\\BrunoAceSC-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Zen_dot';
+    src: url('\\static\\fonts\\ZenDots-Regular.ttf') format('truetype');
+}@font-face {
+    font-family: 'Bruno Ace SC';
+    src: url('\\static\\fonts\\BrunoAceSC-Regular.ttf') format('truetype');
+}@font-face {
+    font-family: 'Syncopate-Bold';
+    src: url('\\static\\fonts\\Syncopate-Bold.ttf') format('truetype');
+}@font-face {
+    font-family: 'Audiowide-Regular';
+    src: url('\\static\\fonts\\Audiowide-Regular.ttf') format('truetype');
+}
+:root{
+    --Bruno-Ace-SC: 'Bruno Ace SC';
+    --Zen_dot: 'Zen_dot';
+    --Audiowide-Regular: 'Audiowide-Regular';
+    --Syncopate-Bold: 'Syncopate-Bold';
+
+}
+
+*{
+    color: black;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    margin:  0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Bruno Ace SC';
+
+}
+
+
+html{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav{
+    padding: 10px;
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav h1{
+    font-family: 'Bruno Ace SC';
+    letter-spacing: 5px;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+}
+nav>a{
+    border-radius: 9px;
+    padding: 10px;
+    text-transform: capitalize;
+
+    /* -webkit-text-stroke: white 1px; */
+    font-family: var(--Bruno-Ace-SC);
+    font-size: 20px;
+    color: green;
+}
+nav span a{
+    text-transform: capitalize;
+    font-family: var(--Bruno-Ace-SC);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+nav span{
+}
+
+
+.content{
+    position: relative;
+
+    width: 100%;
+    height: 850px;
+}
+
+.content img{
+    position: absolute;
+    z-index: 0;
+
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.content div{
+    height: 100%;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+.intro_text{
+    margin-top: 150px;
+
+    font-family: var(--Syncopate-Bold);
+    font-family: var(--Zen_dot);
+
+    letter-spacing: 2px;
+    text-align: center;
+    color: grey;
+    font-size: 100px;
+    text-transform: uppercase;
+}
+.content p{
+    margin-top: 30px;
+
+    justify-self: center;
+    max-width: 30ch;
+
+    font-family: var(--Bruno-Ace-SC);
+    color: white;
+    text-wrap: balance;
+    text-transform: capitalize;
+    font-size: 30px;
+}
