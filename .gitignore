@@ -1,1 +1,3 @@
 virtual/
+static/images/*
+!static/images/.gitkeep

@@ -11,8 +11,12 @@ Functions=al objectives:
 
 
 vector search capable
+
+trending games :
+
 blogs(tentative)
-newsletter and updates 
+newsletter and updates :
+set up using spliforms
 
 
 # fetch game data
