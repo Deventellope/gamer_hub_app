@@ -7,14 +7,29 @@
 
 deign outline
 
-Functions=al objectives:
+Functional objectives:
 
 
-vector search capable
+# vector search capable
 
-trending games :
+# top games :
+use cron jobs update database with 10 top played games return their data
+# method
+fetch games based rating and popularity then store data 
+send 5 games data to frontend 
 
-blogs(tentative)
+# trending games :
+use cron jobs update database with 10 trending games return their data
+# method:
+fetch game trend data in interval of say 1 week
+save trending game data to db send 
+send first 5 trending games data to frontend
+
+# news :
+use cron jobs update database 10 most recent news top trending news
+# method:
+
+# blogs(tentative)
 newsletter and updates :
 set up using spliforms
 
@@ -27,5 +42,5 @@ set up using spliforms
 
 # others
 
-# pull 6 most trending games 
-
+# to do today:
+clone nodes for critical components

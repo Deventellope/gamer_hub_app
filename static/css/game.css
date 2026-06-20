@@ -1,0 +1,251 @@
+
+
+@font-face {
+    font-family: 'Bruno Ace SC';
+    src: url('\\static\\fonts\\BrunoAceSC-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Zen_dot';
+    src: url('\\static\\fonts\\ZenDots-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Syncopate-Bold';
+    src: url('\\static\\fonts\\Syncopate-Bold.ttf') format('truetype');
+}@font-face {
+    font-family: 'Audiowide-Regular';
+    src: url('\\static\\fonts\\Audiowide-Regular.ttf') format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Blinker-Thin';
+    src: url('\\static\\fonts\\Blinker-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Blinker-Light';
+    src: url('\\static\\fonts\\Blinker-Light.ttf') format('truetype');
+    font-weight: 200;
+}@font-face {
+    font-family: 'Blinker-Regular';
+    src: url('\\static\\fonts\\Blinker-Regular.ttf') format('truetype');
+    font-weight: 300;
+
+}@font-face {
+    font-family: 'Blinker-SemiBold';
+    src: url('\\static\\fonts\\Blinker-SemiBold.ttf') format('truetype');
+    font-weight: 400;
+
+}
+@font-face {
+    font-family: 'Blinker-Bold';
+    src: url('\\static\\fonts\\Blinker-Bold.ttf') format('truetype');
+    font-weight: 500;
+
+}
+
+
+
+:root{
+    --Bruno-Ace-SC: 'Bruno Ace SC';
+    --Zen_dot: 'Zen_dot';
+    --Audiowide-Regular: 'Audiowide-Regular';
+    --Syncopate-Bold: 'Syncopate-Bold';
+
+    /* --Blinker-Thin: 'Blinker-Thin';
+    --Blinker-Light: 'Blinker-Light';
+    --Blinker-Regular: 'Blinker-Regular';
+    --Blinker-Bold: 'Blinker-Bold'; */
+    /* --Ubuntu-Bold: 'Ubuntu-Bold'; */
+}
+
+*{
+    color: black;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    margin:  0;
+    padding: 0;
+    /* outline: 0; */
+    background: none;
+    border: none;
+    outline: none;
+    /* font-family: 'Bruno Ace SC'; */
+
+}
+
+
+html{
+    margin: 0;
+    height: 100%;
+    max-width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background: black;
+}
+
+nav{
+    padding: 20px 10px;
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav h1{
+    text-align: center;
+    font-family: var(--Bruno-Ace-SC);
+    letter-spacing: 5px;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+}
+nav span a{
+    text-transform: capitalize;
+    font-family: var(--Bruno-Ace-SC);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+nav>a{
+    padding: 10px;
+    background: greenyellow;
+
+    text-transform: capitalize;
+    font-family: var(--Bruno-Ace-SC);
+    font-size: 24px;
+    color: black;
+    font-weight: 500;
+}
+
+nav span{
+    padding: 10px;
+}
+
+
+
+main{
+    /* display:  grid; */
+    /* grid-template-columns: 900px 1fr; */
+    /* grid-template-columns: 60% 1fr; */
+}
+
+.top{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 500px;
+}
+.top img{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.cover{
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+}
+.info{
+    width: fit-content;
+    padding: 10px;
+}
+.info h1{
+    max-width: 1000px;
+
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-family: var(--Bruno-Ace-SC);
+    font-family: var(--Audiowide-Regular);
+    color: white;
+    font-size: 50px;
+}
+
+.meta{
+    margin-top: 20px;
+
+    padding: 20px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+.meta h2{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: var(--Audiowide-Regular);
+    color: white;
+    font-size: 16px;
+}
+.meta span{
+    display: flex;
+    column-gap: 15px;
+}
+
+
+
+footer{
+    padding: 100px 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: greenyellow;
+    height: fit-content;
+    column-gap: 10px;
+}
+
+
+.fdiv1{
+    display: flex;
+    flex-direction: column;
+}
+.fdiv1 h1{
+    letter-spacing: 5px;
+
+    text-align: left;
+    text-transform: uppercase;
+    color: black;
+    font-family: var(--Zen_dot);
+    font-size: 30px;
+}
+.fdiv1 p{
+    margin-top: 20px;
+
+    text-wrap: balance;
+    text-align: left;
+    color: black;
+    font-family: var(--Bruno-Ace-SC);
+    font-size: 20px;
+}
+
+.fdiv2{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fdiv2 a{
+    text-transform: capitalize;
+    color: black;
+    font-family: var(--Zen_dot);
+    font-size: 26px;
+}
