@@ -1,14 +1,13 @@
-from pymongo import MongoClient
-
-
-# def load_database_model():
-
+from mongo_setup import games_collection, news_collection
 
 from datetime import datetime
 
+
+# format number to date
 def format_number_to_date(numbers):
     formatted_date= datetime.fromtimestamp(numbers).strftime("%b %d, %Y")
     return formatted_date
+
 
 # fetch format news data and the store
 def fetch_trending_games():
