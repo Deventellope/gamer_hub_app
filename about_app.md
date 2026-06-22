@@ -42,5 +42,5 @@ set up using spliforms
 
 # others
 
-# to do today:
-clone nodes for critical components
+# to do:
+clone nodes for critical components(testing)
