@@ -90,8 +90,13 @@ body{
 nav{
     padding: 10px;
     backdrop-filter: blur(15px);
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
     top: 0;
+    z-index: 1001;
+
+    height: 80px;
 
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     display: flex;
@@ -128,21 +133,28 @@ nav span{
 
 
 .hero{
-    position: relative;
+    margin-top: 80px;
+    /* border: 1px solid white; */
+    display: grid;
+    grid-template-columns: 1fr;
 
     width: 100%;
     height: 1000px;
 }
 
 .hero img{
-    position: absolute;
-    z-index: 0;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
 
-    top: 0;
-    left: 0;
+    mask-image: linear-gradient(
+        to bottom,
+        black 80%,
+        transparent 100%
+    );
+
+
     object-fit: cover;
     object-position: center;
-
     width: 100%;
     height: 100%;
 }
@@ -150,6 +162,8 @@ nav span{
 .hero div{
     height: 100%;
     width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
 
     background: rgba(0, 0, 0, 0.8);
     position: relative;
@@ -164,6 +178,17 @@ nav span{
     text-align: center;
     color: grey;
     font-size: 100px;
+    text-transform: uppercase;
+}
+.hero mark{
+    background: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px rgba(128, 128, 128);
+    
+    color: transparent;
+    font-family: var(--Syncopate-Bold);
+    font-size: 120px;
     text-transform: uppercase;
 }
 .hero p{
@@ -202,6 +227,7 @@ nav span{
     text-align: center;
     font-family: var(--Audiowide-Regular);
 
+    letter-spacing: 3px;
     font-size: 36px ;
     color: white;
     text-transform: capitalize;
@@ -246,6 +272,7 @@ textarea::placeholder{
     background : greenyellow;
     box-shadow: 0px 0px 5px 0 greenyellow;
 
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: black;
     font-family: var(--Zen_dot);
@@ -290,6 +317,9 @@ textarea::placeholder{
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    height: fit-content;
+
+    /* box-shadow: 0 0 0px 1px grey; */
 
     display: grid;
     grid-template-rows: 300px auto;
@@ -300,9 +330,12 @@ textarea::placeholder{
     transition: .3s ease;
 
 }
+#game_card:hover {
+    border: 2px solid greenyellow;
+}
 
 #game_card img{
-    grid-row: 1/-1;
+    grid-row: 1/2;
     grid-column: 1/-1;
 
     width: 100%;
@@ -313,12 +346,13 @@ textarea::placeholder{
 
 .label{
     position: absolute;
-    z-index: 1000;
-    top: 0;
-    right: 0;
+    z-index: 1000; 
+    top: 0; 
+    right: 0; 
 
     background: rgba(0, 0, 0);
     width: fit-content;
+    height: fit-content;
     padding: 10px;
     border-bottom-left-radius: 12px;
 
@@ -329,28 +363,30 @@ textarea::placeholder{
     font-size: 18px;
 }
 #game_card  span{
+    z-index: 1000;
     grid-column: 1/-1;
     grid-row: 2/3;
 
-    padding: 10px 0;
-    background: rgba(0, 0, 0);
-    backdrop-filter: blur(20px);
+    padding: 10px;
+    /* backdrop-filter: blur(20px); */
+    background: rgba(5, 5, 5);
 }
 .info h1{
     margin-top: 3px;
+    letter-spacing: 1px;
     text-transform: capitalize;
     color:grey;
     font-family: var(--Bruno-Ace-SC);
+    font-family: var(--Audiowide-Regular);
     font-size: 18px;
 }
 
-
 .trending{
-    margin-top: 100px;
+    margin-top: 150px;
     padding: 0px 20px;
-    /* border: 1px solid white; */
 
     display: grid;
+    row-gap: 15px;
 }
 .trending>h1{
     text-transform: capitalize;
@@ -360,7 +396,7 @@ textarea::placeholder{
     font-size: 40px;
 }
 .trending>h2{
-    margin-top: 10px;
+    margin-bottom: 25px;
 
     text-transform: capitalize;
     color: rgba(128, 128, 128, 0.5);
@@ -368,9 +404,15 @@ textarea::placeholder{
     font-size: 22px;
 }
 
+.trending div:nth-of-type(3n){
+    /* border: 1px solid red; */
+    margin-top: 200px;
+}
+.trending h1:nth-of-type(2n){
+    color: greenyellow;
+}
 
-.trending div{
-    margin-top: 30px;
+.trending>div{
     overflow: hidden;
 
     border-radius: 9px;
@@ -378,15 +420,25 @@ textarea::placeholder{
     column-gap: 10px;
     display: grid;
     grid-template-columns: 250px 1fr;
+    grid-template-rows: 250px;
+}
+.trending>div:hover img{
+    opacity: .5;
+    /* scale: 1.1; */
+}
+.trending>div:hover{
+    border: 2px solid greenyellow;
+    cursor: pointer;
 }
 .trending img{
     width: 100%;
-    height: 150px;
+    height: 100%;
 
     object-fit: cover;
     object-position: center;
 }
 .trending span{
+    z-index: 1000;
     padding: 10px;
 
 }
@@ -400,10 +452,12 @@ textarea::placeholder{
 .trending p{
     margin-top: 10px;
 
+    display: -webkit-box;
+    
     text-transform: capitalize;
     color:grey;
     font-family: var(--Bruno-Ace-SC);
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -411,7 +465,7 @@ textarea::placeholder{
 
 
 .updates{
-    margin-top: 200px;
+    margin-top: 250px;
 
     width : 100%;
     display: grid;
@@ -430,6 +484,15 @@ textarea::placeholder{
     align-items: flex-start;
     row-gap: 10px;
 }
+.updates form h1{
+
+    letter-spacing: 5px;
+    text-transform: capitalize;
+    text-transform: uppercase;
+    color: white;
+    font-family: var(--Syncopate-Bold);
+    font-size: 36px;
+}
 
 .updates input{
     width: 100%;
@@ -445,7 +508,7 @@ textarea::placeholder{
     font-size: 24px;
 }
 .updates input::placeholder{
-    color: white;
+    color: grey;
     font-size: 24px;
 }
 .updates textarea{
@@ -461,14 +524,11 @@ textarea::placeholder{
 
     text-decoration:none;
     font-family: var(--Bruno-Ace-SC);
-    color: grey;
-    font-size: 20px;
+    color: white;
     font-size: 24px;
 }
 .updates textarea::placeholder{
-    color: white;
     color: grey;
-    font-size: 20px;
 }
 .updates button{
     padding: 10px ;

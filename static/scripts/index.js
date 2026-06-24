@@ -23,12 +23,11 @@ for(let i=0; i<7 ; i+=1){
     console.log("new element appended".toUpperCase())
 }
 
-
+// FOR TRENDING SECTION ELEMENTS
 a_element= document.getElementById("trend_card")
 a_container= a_element.parentElement
 
-
-for(let i=0; i<15 ; i+=1){
+for(let i=0; i<8; i+=1){
     paths= ["static\\images\\Cute Spongebob Wallpaper HD.jfif",
 "static\\images\\1142647736720861356.jfif",
 "static\\images\\Epic 4K Anime Wallpapers 🔥 _ HD Action & Fantasy Backgrounds Description_ Epic anime wallpapers in.jfif",
